@@ -1,0 +1,354 @@
+/* ==========================================================================
+   Estilos Generales y Resets Básicos
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #f9f8f3;
+    color: #2c3e35;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+/* Enlaces y botones base */
+a {
+    color: #1f3a2e;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 16px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   Encabezado y Navegación
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    color: #1f3a2e;
+    letter-spacing: -0.5px;
+}
+
+header p {
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: #666;
+    font-weight: 600;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.9rem;
+}
+
+header button {
+    background-color: #1f3a2e;
+    color: #ffffff;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Subencabezado / Pasos de Navegación
+   ========================================================================== */
+section:has(ol) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 0.85rem;
+}
+
+ol {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+ol li {
+    color: #888;
+}
+
+ol li strong {
+    color: #1f3a2e;
+}
+
+/* ==========================================================================
+   Estructura Principal (Contenedores/Tarjetas)
+   ========================================================================== */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Títulos de sección */
+main section h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    color: #1f3a2e;
+    margin-bottom: 8px;
+}
+
+main section > p:first-of-type {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #888;
+}
+
+/* Secciones como tarjetas contenidas */
+section {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #e5e5e0;
+}
+
+/* ==========================================================================
+   Grid de Paquetes Predefinidos
+   ========================================================================== */
+section:has(article) {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+section div:has(h3) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h3 {
+    font-family: 'Georgia', serif;
+    color: #1f3a2e;
+}
+
+/* Tarjetas de opciones de horas */
+article {
+    position: relative;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    transition: all 0.2s ease;
+}
+
+article:hover {
+    border-color: #1f3a2e;
+}
+
+/* Tarjeta Seleccionada (Bono 20h) */
+article:has(input:checked) {
+    background-color: #1f3a2e;
+    color: #ffffff;
+    border-color: #1f3a2e;
+}
+
+article:has(input:checked) h4,
+article:has(input:checked) p,
+article:has(input:checked) span,
+article:has(input:checked) small {
+    color: #ffffff;
+}
+
+article input[type="radio"] {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+article label {
+    display: block;
+    cursor: pointer;
+}
+
+article span {
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #777;
+}
+
+article h4 {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    margin: 8px 0;
+}
+
+article button {
+    margin-top: 10px;
+    width: 100%;
+    background-color: #f0ede5;
+    color: #1f3a2e;
+    font-weight: 600;
+}
+
+article:has(input:checked) button {
+    background-color: #2d5242;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Formularios y Elementos de Entrada
+   ========================================================================== */
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+    align-items: end;
+}
+
+form label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fafafa;
+    font-size: 0.9rem;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #1f3a2e;
+    background-color: #ffffff;
+}
+
+/* Listas de recursos adicionales */
+ul {
+    list-style: none;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+ul li div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+ul li input[type="number"] {
+    width: 60px;
+}
+
+/* Mensajes de feedback (Criterios de Aceptación) */
+#mensaje-respuesta {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: none; /* Se activa con JS según la validación */
+}
+
+#mensaje-respuesta.exito {
+    display: block;
+    background-color: #e6f4ea;
+    color: #137333;
+    border: 1px solid #ceead6;
+}
+
+#mensaje-respuesta.error {
+    display: block;
+    background-color: #fce8e6;
+    color: #c5221f;
+    border: 1px solid #fad2cf;
+}
+
+/* ==========================================================================
+   Barra Inferior de Resumen y Acciones
+   ========================================================================== */
+main > section:last-of-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-top: 2px solid #1f3a2e;
+    padding: 20px;
+}
+
+main > section:last-of-type button[type="submit"] {
+    background-color: #1f3a2e;
+    color: #ffffff;
+    font-size: 0.95rem;
+    padding: 12px 24px;
+}
+
+main > section:last-of-type button[type="button"] {
+    background-color: transparent;
+    color: #666;
+}
+
+/* ==========================================================================
+   Pie de Página
+   ========================================================================== */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #777;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+footer nav {
+    margin-top: 5px;
+}
