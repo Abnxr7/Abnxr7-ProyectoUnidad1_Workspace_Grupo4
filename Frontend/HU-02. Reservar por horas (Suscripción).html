@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkSpace - Espacios para Avanzar</title>
+</head>
+<body>
+
+    <!-- Encabezado / Navbar -->
+    <header>
+        <div>
+            <h1>WorkSpace</h1>
+            <p>ESPACIOS PARA AVANZAR</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Nuestra esencia</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><span>Madrid</span></li>
+                <li><button>Sesión iniciada</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Subencabezado / Pasos -->
+    <section>
+        <a href="#">&larr; Página principal</a>
+        <ol>
+            <li><strong>1. Paquete y recursos</strong></li>
+            <li>2. Pago de suscripción</li>
+        </ol>
+    </section>
+
+    <main>
+        <!-- Título de la sección -->
+        <section>
+            <p>01 / TU TIEMPO, A TU MEDIDA</p>
+            <h2>Suscripción flexible</h2>
+            <p>Elige un bono de horas o crea tu propio paquete. Añade los recursos que necesites y revisa tu selección antes del pago.</p>
+        </section>
+
+        <!-- Selección de Paquetes Predefinidos -->
+        <section>
+            <div>
+                <h3>Elige tu paquete</h3>
+                <small>Precios de ejemplo</small>
+            </div>
+
+            <!-- Tarjeta 10h -->
+            <article>
+                <input type="radio" id="pkg-10h" name="paquete" value="10">
+                <label for="pkg-10h">
+                    <span>BONO FLEXIBLE</span>
+                    <h4>10 h</h4>
+                    <p>50,00 € + IVA</p>
+                    <small>5,00 €/h · Sin permanencia</small>
+                    <button type="button">Seleccionar paquete</button>
+                </label>
+            </article>
+
+            <!-- Tarjeta 20h -->
+            <article>
+                <input type="radio" id="pkg-20h" name="paquete" value="20" checked>
+                <label for="pkg-20h">
+                    <span>BONO FLEXIBLE</span>
+                    <h4>20 h</h4>
+                    <p>100,00 € + IVA</p>
+                    <small>5,00 €/h · Sin permanencia</small>
+                    <button type="button">Paquete seleccionado</button>
+                </label>
+            </article>
+
+            <!-- Tarjeta 40h -->
+            <article>
+                <input type="radio" id="pkg-40h" name="paquete" value="40">
+                <label for="pkg-40h">
+                    <span>BONO FLEXIBLE</span>
+                    <h4>40 h</h4>
+                    <p>200,00 € + IVA</p>
+                    <small>5,00 €/h · Sin permanencia</small>
+                    <button type="button">Seleccionar paquete</button>
+                </label>
+            </article>
+
+            <!-- Tarjeta 60h -->
+            <article>
+                <input type="radio" id="pkg-60h" name="paquete" value="60">
+                <label for="pkg-60h">
+                    <span>BONO FLEXIBLE</span>
+                    <h4>60 h</h4>
+                    <p>300,00 € + IVA</p>
+                    <small>5,00 €/h · Sin permanencia</small>
+                    <button type="button">Seleccionar paquete</button>
+                </label>
+            </article>
+
+            <!-- Tarjeta 80h -->
+            <article>
+                <input type="radio" id="pkg-80h" name="paquete" value="80">
+                <label for="pkg-80h">
+                    <span>BONO FLEXIBLE</span>
+                    <h4>80 h</h4>
+                    <p>400,00 € + IVA</p>
+                    <small>5,00 €/h · Sin permanencia</small>
+                    <button type="button">Seleccionar paquete</button>
+                </label>
+            </article>
+
+            <p><small>Precios antes de IVA. El total incluye el 21% de IVA y se detalla en el resumen.</small></p>
+        </section>
+
+        <!-- Paquete Personalizado -->
+        <section>
+            <input type="checkbox" id="custom-pkg">
+            <label for="custom-pkg"><strong>Paquete personalizado</strong></label>
+            <span>No seleccionado</span>
+            <p>Ajusta las horas y los minutos para crear una alternativa a los bonos.</p>
+
+            <form>
+                <div>
+                    <label for="horas-custom">Horas</label>
+                    <select id="horas-custom" name="horas-custom">
+                        <option value="12">12</option>
+                        <!-- Más opciones -->
+                    </select>
+                </div>
+                <div>
+                    <label for="minutos-custom">Minutos</label>
+                    <select id="minutos-custom" name="minutos-custom">
+                        <option value="30">30</option>
+                        <!-- Más opciones -->
+                    </select>
+                </div>
+                <div>
+                    <small>12 h 30 min = 5,00 €/h</small>
+                    <p><strong>62,50 € + IVA</strong></p>
+                </div>
+            </form>
+            <p><small>Esta alternativa no se suma al total. El paquete activo sigue siendo el bono de 20 h.</small></p>
+        </section>
+
+        <!-- Recursos Adicionales -->
+        <section>
+            <div>
+                <h3>Recursos adicionales</h3>
+                <small>Sin seleccionar</small>
+            </div>
+            <p>Marca los recursos que necesites e indica la cantidad.</p>
+
+            <ul>
+                <li>
+                    <input type="checkbox" id="res-proyectar">
+                    <label for="res-proyectar">Proyector</label>
+                    <div>
+                        <label for="cant-proyectar">Cantidad</label>
+                        <input type="number" id="cant-proyectar" value="0" min="0">
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" id="res-catering">
+                    <label for="res-catering">Catering</label>
+                    <div>
+                        <label for="cant-catering">Cantidad</label>
+                        <input type="number" id="cant-catering" value="0" min="0">
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" id="res-bebidas">
+                    <label for="res-bebidas">Bebidas</label>
+                    <div>
+                        <label for="cant-bebidas">Cantidad</label>
+                        <input type="number" id="cant-bebidas" value="0" min="0">
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" id="res-snacks">
+                    <label for="res-snacks">Snacks</label>
+                    <div>
+                        <label for="cant-snacks">Cantidad</label>
+                        <input type="number" id="cant-snacks" value="0" min="0">
+                    </div>
+                </li>
+            </ul>
+            <p><small>Tarifas de extras no especificadas en este ejemplo. Sin recursos seleccionados, el importe de extras es 0,00 €.</small></p>
+        </section>
+
+        <!-- Formulario de Agendamiento / Reserva (Criterios de Aceptación) -->
+        <section>
+            <h3>Agendamiento de Reserva</h3>
+            <form id="booking-form">
+                <div>
+                    <label for="espacio-sala">Espacio o Sala:</label>
+                    <select id="espacio-sala" name="espacio-sala" required>
+                        <option value="sala-a">Sala A - Reuniones</option>
+                        <option value="sala-b">Sala B - Conferencias</option>
+                        <option value="desk-1">Escritorio Co-working 01</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="fecha-reserva">Fecha de Reserva:</label>
+                    <input type="date" id="fecha-reserva" name="fecha-reserva" required>
+                </div>
+
+                <div>
+                    <label for="hora-inicio">Hora de Inicio:</label>
+                    <input type="time" id="hora-inicio" name="hora-inicio" required>
+                </div>
+
+                <div>
+                    <!-- Requisito Escenario 02.3: Restricción de horario posterior a las 21:00 -->
+                    <label for="hora-fin">Hora de Finalización:</label>
+                    <input type="time" id="hora-fin" name="hora-fin" max="21:00" required>
+                    <small>(El horario límite de cierre es a las 21:00)</small>
+                </div>
+
+                <button type="submit">Confirmar y Agendar Reserva</button>
+            </form>
+
+            <!-- Área para mostrar mensajes de estado/error (Escenarios 02.1, 02.2, 02.3) -->
+            <div id="mensaje-respuesta" role="alert">
+                <!-- Ejemplo de mensaje devuelto según escenario:
+                     "Reserva Confirmada" (Escenario 02.1)
+                     "Solo se permite una reserva por día" (Escenario 02.2)
+                     "La hora de finalización no puede ser posterior a las 21:00" (Escenario 02.3)
+                -->
+            </div>
+        </section>
+
+        <!-- Barra Inferior de Confirmación / Pago -->
+        <section>
+            <div>
+                <p><strong>Bono flexible · 20 h · Total con IVA: 121,00 €</strong></p>
+                <p><small>Tu selección aún no se ha cobrado. Revisa los datos en el siguiente paso.</small></p>
+            </div>
+            <div>
+                <button type="button">Descartar selección</button>
+                <button type="submit">Realizar pago de suscripción &rarr;</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 WorkSpace Espacios, S. L.</p>
+        <p>¿Necesitas ayuda? <a href="mailto:hola@workspace.example">hola@workspace.example</a> - Contacto de ejemplo</p>
+        <nav>
+            <a href="#">Privacidad</a> - <a href="#">Términos y condiciones</a>
+        </nav>
+    </footer>
+
+</body>
+</html>
