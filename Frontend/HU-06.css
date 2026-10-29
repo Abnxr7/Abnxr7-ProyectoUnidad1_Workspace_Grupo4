@@ -1,0 +1,379 @@
+/* ==========================================================================
+   Estilos Generales y Resets
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #f9f8f3;
+    color: #2c3e35;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+a {
+    color: #1f3a2e;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 18px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e8e7e1;
+    margin: 15px 0;
+}
+
+/* ==========================================================================
+   Encabezado Principal / Navbar
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    color: #1f3a2e;
+}
+
+header p {
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: #666;
+    font-weight: 600;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.9rem;
+}
+
+header button {
+    background-color: #1f3a2e;
+    color: #ffffff;
+    font-size: 0.85rem;
+}
+
+/* Subencabezado de rutas */
+main > section:nth-of-type(1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* ==========================================================================
+   Contenedor Principal y Grid
+   ========================================================================== */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Encabezado de la página */
+main h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2.2rem;
+    color: #1f3a2e;
+    margin-bottom: 8px;
+}
+
+main section > p:first-of-type {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #888;
+}
+
+/* Panel de Pruebas / Simulación de Criterios de Aceptación */
+#simulador-estado-form {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px dashed #1f3a2e;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.85rem;
+}
+
+#simulador-estado-form select {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+}
+
+#simulador-estado-form button {
+    background-color: #1f3a2e;
+    color: #ffffff;
+}
+
+/* Mensaje de respuesta (Error / Expirado / Cancelado) */
+#mensaje-estado-qr {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: none;
+}
+
+#mensaje-estado-qr.error {
+    display: block;
+    background-color: #fce8e6;
+    color: #c5221f;
+    border: 1px solid #fad2cf;
+}
+
+/* ==========================================================================
+   Sección de Detalle de Reserva y Pase QR (Dos Columnas)
+   ========================================================================== */
+main > section:nth-of-type(3) {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Tarjeta Principal de la Reserva */
+article {
+    background-color: #f1f5f8;
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid #e1e8ed;
+}
+
+article > div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+article > div:first-of-type span {
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #5a6b7c;
+}
+
+#reserva-estado-badge {
+    font-size: 0.8rem;
+    color: #1f3a2e;
+}
+
+article h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.6rem;
+    color: #1f3a2e;
+}
+
+article > p {
+    color: #5a6b7c;
+    font-size: 0.9rem;
+}
+
+/* Grillas de Información interna (Fechas / Titular) */
+article div:has(> div) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+}
+
+article small {
+    color: #7a8b9c;
+    font-size: 0.75rem;
+    display: block;
+}
+
+article strong {
+    color: #1f3a2e;
+    font-size: 0.95rem;
+}
+
+/* Desglose de Gastos */
+article div:has(> span) {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+article div:has(> span) > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Total Pagado */
+article div:has(> p) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+article div:has(> p) p:last-child {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    color: #1f3a2e;
+}
+
+/* ==========================================================================
+   Tarjeta del Pase de Acceso QR (Columna Derecha)
+   ========================================================================== */
+#contenedor-pase-qr {
+    background-color: #ffffff;
+    border: 1px solid #1f3a2e;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+#contenedor-pase-qr > span {
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #1f3a2e;
+}
+
+#contenedor-pase-qr h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    color: #1f3a2e;
+    margin: 8px 0 20px 0;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+#img-qr {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Efecto cuando el QR se desactiva/expira */
+#contenedor-pase-qr.desactivado #img-qr {
+    filter: grayscale(100%);
+    opacity: 0.2;
+}
+
+figcaption p {
+    font-size: 0.85rem;
+    color: #1f3a2e;
+    letter-spacing: 0.5px;
+}
+
+figcaption small {
+    font-size: 0.75rem;
+    color: #777;
+}
+
+#contenedor-pase-qr > p {
+    font-size: 0.7rem;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* Indicación inferior */
+main > section:nth-of-type(4) {
+    background-color: #f3f0e8;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ==========================================================================
+   Barra Inferior de Navegación y Acciones
+   ========================================================================== */
+main > section:last-of-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-top: 1px solid #e5e5e0;
+    padding: 25px 0;
+    margin-top: 20px;
+}
+
+main > section:last-of-type h4 {
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    color: #1f3a2e;
+}
+
+main > section:last-of-type button:first-of-type {
+    background-color: #ffffff;
+    color: #1f3a2e;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+main > section:last-of-type button:last-of-type {
+    background-color: #1f3a2e;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Pie de Página
+   ========================================================================== */
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #777;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+footer nav {
+    margin-top: 5px;
+}
