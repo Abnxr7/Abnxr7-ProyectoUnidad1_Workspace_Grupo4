@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkSpace - Confirmación y Pase QR</title>
+</head>
+<body>
+
+    <!-- Encabezado / Navbar principal -->
+    <header>
+        <div>
+            <h1>WorkSpace</h1>
+            <p>ESPACIOS PARA AVANZAR</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Nuestra esencia</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><span>Madrid</span></li>
+                <li><button type="button">Sesión iniciada</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Subencabezado de navegación superior -->
+    <section>
+        <a href="#">&larr; Página principal</a>
+        <div>
+            <span>Pago completado / Confirmación y pase</span>
+        </div>
+    </section>
+
+    <main>
+        <!-- Título principal y mensaje de confirmación -->
+        <section>
+            <p>RESERVA / PAGO COMPLETADO</p>
+            <h2>Tu próximo encuentro ya tiene espacio.</h2>
+            <p>Pago realizado correctamente. Tu reserva está confirmada y aquí puedes consultar su pase QR.</p>
+        </section>
+
+        <!-- Selector de prueba / Demostración para validar Criterios de Aceptación -->
+        <section>
+            <form id="simulador-estado-form">
+                <label for="estado-reserva-sim">Simular estado de reserva para la prueba:</label>
+                <select id="estado-reserva-sim" name="estado-reserva-sim">
+                    <option value="confirmada" selected>Confirmada (Escenario 06.1)</option>
+                    <option value="cancelada">Cancelada (Escenario 06.2)</option>
+                    <option value="expirada">Finalizada / Expirada (Escenario 06.3)</option>
+                </select>
+                <button type="button" id="btn-solicitar-qr">Solicitar pase de acceso QR</button>
+            </form>
+            
+            <!-- Mensaje de estado/error para validaciones -->
+            <div id="mensaje-estado-qr" role="alert">
+                <!-- Se mostrará "Reserva no activa" o "QR Expirado" según corresponda -->
+            </div>
+        </section>
+
+        <!-- Contenedor Principal de Detalles + Pase QR -->
+        <section>
+            <!-- Detalle de la Reserva -->
+            <article>
+                <div>
+                    <span>RESERVA WORKSPACE</span>
+                    <strong id="reserva-estado-badge">Confirmada · Pagada</strong>
+                </div>
+
+                <h3>Sala de reunión · S1-01</h3>
+                <p>WorkSpace Chamberí · Madrid · Piso 1 · 4 personas</p>
+
+                <hr>
+
+                <!-- Grid de Fecha, Tiempos y Duración -->
+                <div>
+                    <div>
+                        <small>Fecha</small>
+                        <p><strong>28 octubre 2026</strong></p>
+                    </div>
+                    <div>
+                        <small>Inicio</small>
+                        <p><strong>10:00 h</strong></p>
+                    </div>
+                    <div>
+                        <small>Fin</small>
+                        <p><strong id="reserva-hora-fin">12:00 h</strong></p>
+                    </div>
+                    <div>
+                        <small>Duración</small>
+                        <p><strong>2 horas</strong></p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- Datos del Titular -->
+                <div>
+                    <p><small>Titular · Datos de ejemplo</small></p>
+                    <div>
+                        <div>
+                            <small>Nombre</small>
+                            <p><strong>Lucía</strong></p>
+                        </div>
+                        <div>
+                            <small>Apellido</small>
+                            <p><strong>Martín</strong></p>
+                        </div>
+                        <div>
+                            <small>Cédula · ficticia</small>
+                            <p><strong>EJ-000123</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- Desglose de Gastos -->
+                <div>
+                    <div>
+                        <span>Subtotal</span>
+                        <span>36,00 €</span>
+                    </div>
+                    <div>
+                        <span>Extras</span>
+                        <span>0,00 €</span>
+                    </div>
+                    <div>
+                        <span>IVA (21 %)</span>
+                        <span>7,56 €</span>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- Total Pagado -->
+                <div>
+                    <p>Total pagado · IVA incluido</p>
+                    <p><strong>43,56 €</strong></p>
+                </div>
+
+                <p><small>Referencia RSV-261028-031 · Pago recibido el 28 octubre 2026</small></p>
+            </article>
+
+            <!-- Tarjeta del Pase de Acceso QR -->
+            <aside id="contenedor-pase-qr">
+                <span>PASE DE RESERVA</span>
+                <h3>Tu pase de acceso QR</h3>
+
+                <!-- Área donde se despliega o desactiva la imagen del QR -->
+                <figure id="area-codigo-qr">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=RSV-261028-031" alt="Código QR de Pase de Acceso" id="img-qr">
+                    <figcaption>
+                        <p><strong>RSV-261028-031</strong></p>
+                        <small>QR de demostración<br>No válido para acceso real</small>
+                    </figcaption>
+                </figure>
+
+                <p><small>Diseño estático. El patrón no contiene cédula ni datos personales.</small></p>
+            </aside>
+        </section>
+
+        <!-- Indicación / Historial -->
+        <section>
+            <p>Este mismo pase también está visible en Historial de actividades.</p>
+        </section>
+
+        <!-- Barra Inferior de Navegación y Acciones -->
+        <section>
+            <div>
+                <h4>Tus reservas, siempre a mano.</h4>
+                <p><small>Consulta los detalles, los pases y las opciones de cada servicio en tu historial.</small></p>
+            </div>
+            <div>
+                <button type="button">Página principal</button>
+                <button type="button">Ver Historial de actividades &rarr;</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 WorkSpace Espacios, S. L.</p>
+        <p>¿Necesitas ayuda? <a href="mailto:hola@workspace.example">hola@workspace.example</a> · Contacto de ejemplo</p>
+        <nav>
+            <a href="#">Privacidad</a> · <a href="#">Términos y condiciones</a>
+        </nav>
+    </footer>
+
+</body>
+</html>
